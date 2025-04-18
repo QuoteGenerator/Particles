@@ -14,11 +14,11 @@ window.addEventListener("resize",function(){
 
 class Particle {
     constructor(){
-        this.x = Math.random() * canvas.width-canvas.width;
+        this.x = Math.random() * canvas.width - canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = 3;
-        this.speedX = 8
-        this.speedY = Math.random() * 6-3;
+        this.size = Math.random() < 0.5 ? 1 : 5;
+        this.speedX = Math.random() * 1.5+1.5;
+        this.speedY = 0;
     }
 
     update(){
@@ -29,7 +29,7 @@ class Particle {
     draw(){
         ctx.fillStyle = "red";
         ctx.lineWidth = 2.5;
-        ctx.strokeStyle = "blue";
+        ctx.strokeStyle = "red";
         
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
